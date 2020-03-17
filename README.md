@@ -1,12 +1,12 @@
 # dummy-vpn-client
-<br>
-sudo -s
-echo 1 > /proc/sys/net/netfilter/nf_conntrack_helper
-modprobe nf_conntrack_pptp nf_conntrack_proto_gre
-#====================================================
-Edit docker-compose.yml
-example:
-###############
+
+```
+sudo -s 
+echo 1 > /proc/sys/net/netfilter/nf_conntrack_helper <br>
+modprobe nf_conntrack_pptp nf_conntrack_proto_gre <br>
+```
+Edit docker-compose.yml (example)
+```
 vpn:
   build: .
   net: bridge
@@ -19,8 +19,8 @@ vpn:
     - /dev/ppp
   cap_add:
     - NET_ADMIN
-################
-#==================================================
-docker-compose build  && docker-compose up -d
+```
+
+```docker-compose build  && docker-compose up -d```
 
 
