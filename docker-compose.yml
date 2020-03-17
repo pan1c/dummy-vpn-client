@@ -1,0 +1,12 @@
+vpn:
+  build: .
+  net: bridge
+  environment:
+    - SERVER=vpnserverip
+    - USER=username
+    - PASSWORD=password
+    - DUMMYIP=iptosendpackets
+  devices:
+    - /dev/ppp
+  cap_add:
+    - NET_ADMIN
