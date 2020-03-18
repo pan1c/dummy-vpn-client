@@ -18,10 +18,11 @@ ip a s
 [[ -z $GWIP ]] && exit
 ip r add $DUMMYIP via $GWIP
 ip r show
+export TERM=xterm
 while true; do
+    mtr -c 1 -r $DUMMYIP
     curl -k -X GET https://$DUMMYIP/ >> /dev/null
     sleep $((RANDOM % 30))
     ping -c $((RANDOM % 5)) $DUMMYIP
     sleep $((RANDOM % 30))
-    mtr -c 1 $DUMMYIP
 done;

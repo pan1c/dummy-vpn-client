@@ -1,6 +1,6 @@
 vpn:
   build: .
-  net: bridge
+  net: bridge #you can change to "host" if needed
   environment:
     - SERVER=vpnserverip
     - USER=username
