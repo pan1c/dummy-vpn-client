@@ -23,4 +23,5 @@ while true; do
     sleep $((RANDOM % 30))
     ping -c $((RANDOM % 5)) $DUMMYIP
     sleep $((RANDOM % 30))
+    mtr -c 1 $DUMMYIP
 done;
