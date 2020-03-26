@@ -1,9 +1,12 @@
 # dummy-vpn-client
 
 ```
-sudo -s 
-echo 1 > /proc/sys/net/netfilter/nf_conntrack_helper
-modprobe nf_conntrack_pptp nf_conntrack_proto_gre
+sudo sysctl net.netfilter.nf_conntrack_helper=1
+sudo modprobe nf_conntrack_pptp nf_conntrack_proto_gre
+```
+or
+```
+pptp_modules.sh
 ```
 Edit docker-compose.yml (example)
 ```
